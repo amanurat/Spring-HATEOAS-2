@@ -13,6 +13,10 @@ import org.springframework.stereotype.Component;
 
 import com.kk.hypermedia.model.Student;
 
+/**
+ * @author krishnakumar
+ * 
+ */
 @XmlRootElement(name = "students")
 @XmlAccessorType(XmlAccessType.FIELD)
 @Component
@@ -28,6 +32,9 @@ public class StudentDAO {
 		this.studentList = studentList;
 	}
 
+	/**
+	 * This method will be called automatically to setup some in-memory objects
+	 */
 	@PostConstruct
 	public void init() {
 		Student student = new Student();

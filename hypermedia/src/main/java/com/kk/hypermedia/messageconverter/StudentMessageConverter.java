@@ -13,9 +13,16 @@ import org.springframework.http.converter.HttpMessageNotWritableException;
 import com.kk.hypermedia.dao.StudentDAO;
 import com.kk.hypermedia.model.Student;
 
+/**
+ * This class is used to convert StudentDAO object into "text/plain" or
+ * "text/html" format
+ * 
+ * @author krishnakumar
+ * 
+ */
 public class StudentMessageConverter extends AbstractHttpMessageConverter<StudentDAO> {
 	public StudentMessageConverter() {
-		super(new MediaType("text", "plain", Charset.forName("UTF-8")));
+		super(new MediaType("text", "plain", Charset.forName("UTF-8")), new MediaType("text", "html", Charset.forName("UTF-8")));
 	}
 
 	@Override
