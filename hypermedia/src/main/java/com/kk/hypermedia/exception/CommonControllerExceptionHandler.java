@@ -45,6 +45,7 @@ public class CommonControllerExceptionHandler {
 	 */
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<String> handleAllExceptions(Exception ex) {
+		ex.printStackTrace();
 		return new ResponseEntity<String>(ex.getMessage(), HttpStatus.EXPECTATION_FAILED);
 	}
 }
